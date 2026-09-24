@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Aliya Zholbaryskhan — Marketing & Growth Manager</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-font-smoothing:antialiased}
+:root{--w:#fff;--bg:#f8f8f8;--ink:#111;--mid:#666;--soft:#aaa;--line:#e8e8e8}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif}
+
+nav{position:fixed;inset:0 0 auto;z-index:99;height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 64px;background:rgba(248,248,248,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nlogo{font-size:13px;font-weight:700}
+.nlinks{display:flex;gap:32px}
+.nlinks a{font-size:11px;font-weight:500;color:var(--soft);text-decoration:none;letter-spacing:.1em;text-transform:uppercase;transition:color .15s}
+.nlinks a:hover{color:var(--ink)}
+.nlang{display:flex;border:1px solid var(--line);border-radius:99px;overflow:hidden}
+.lb{padding:5px 14px;font-size:11px;font-weight:600;font-family:inherit;letter-spacing:.06em;text-transform:uppercase;background:none;border:none;color:var(--soft);cursor:pointer;transition:all .15s}
+.lb.on{background:var(--ink);color:#fff}
+
+#hero{min-height:100vh;padding-top:52px;display:grid;grid-template-columns:1fr 1fr}
+.hl{display:flex;flex-direction:column;justify-content:center;padding:80px 56px 80px 72px}
+.htag{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin-bottom:32px}
+.hname{font-size:clamp(48px,5.8vw,80px);font-weight:700;line-height:.98;letter-spacing:-.035em;margin-bottom:36px}
+.hname .dim{font-weight:300;color:var(--soft)}
+.hdesc{font-size:16px;font-weight:300;color:var(--mid);max-width:400px;margin-bottom:40px;line-height:1.75}
+.hstats{display:flex;flex-direction:column;gap:10px;margin-bottom:48px}
+.hstat{font-size:14px;color:var(--ink);display:flex;align-items:center;gap:10px}
+.hstat::before{content:'';width:20px;height:1px;background:var(--soft);flex-shrink:0}
+.hbtns{display:flex;gap:12px}
+.bd{padding:13px 28px;background:var(--ink);color:#fff;font-size:12px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;border-radius:4px;transition:opacity .15s}
+.bd:hover{opacity:.75}
+.bg-btn{padding:13px 28px;border:1.5px solid var(--line);color:var(--ink);font-size:12px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;border-radius:4px;transition:all .15s}
+.bg-btn:hover{border-color:var(--ink)}
+
+.hr{position:relative;overflow:hidden;background:#e0e0e0}
+.hr img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;min-height:60vh}
+.photo-overlay{position:absolute;bottom:0;left:0;right:0;padding:40px;background:linear-gradient(to top,rgba(0,0,0,.58) 0%,transparent 100%);display:flex;gap:28px;flex-wrap:wrap}
+.ps{border-top:1px solid rgba(255,255,255,.3);padding-top:12px}
+.ps-n{font-size:22px;font-weight:700;color:#fff;display:block;line-height:1}
+.ps-l{font-size:9px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);display:block;margin-top:4px}
+
+.sec{padding:88px 72px;border-top:1px solid var(--line)}
+.slabel{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);margin-bottom:48px}
+
+.nband{display:grid;grid-template-columns:repeat(6,1fr);border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--w)}
+.nb{padding:32px 24px;border-right:1px solid var(--line);transition:background .15s}
+.nb:last-child{border-right:none}
+.nb:hover{background:var(--bg)}
+.nb-n{font-size:clamp(20px,2.2vw,34px);font-weight:700;letter-spacing:-.03em;color:var(--ink);line-height:1;display:block;margin-bottom:6px}
+.nb-l{font-size:11px;color:var(--mid);line-height:1.4}
+
+.fn-row{display:grid;grid-template-columns:44px 220px 1fr;gap:32px;padding:28px 0;border-bottom:1px solid #f0f0f0;align-items:start}
+.fn-row:first-child{border-top:1px solid #f0f0f0}
+.fn-i{font-size:11px;color:#ccc;letter-spacing:.08em;padding-top:2px}
+.fn-t{font-size:15px;font-weight:500;line-height:1.4}
+.fn-r{font-size:13px;color:var(--mid);line-height:1.65}
+
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.card{background:var(--w);padding:44px 36px}
+.card-wide{grid-column:span 2}
+.c-co{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-bottom:3px}
+.c-role{font-size:11px;color:var(--soft);margin-bottom:16px}
+.c-num{font-size:clamp(38px,4vw,58px);font-weight:700;letter-spacing:-.035em;color:var(--ink);line-height:1;margin-bottom:4px}
+.c-sub{font-size:13px;color:var(--mid);margin-bottom:20px}
+.c-div{width:32px;height:1px;background:var(--line);margin-bottom:18px}
+.c-fact{font-size:13px;color:var(--mid);line-height:1.7}
+.c-results{margin-top:14px;display:flex;flex-direction:column;gap:6px}
+.c-result{font-size:13px;color:var(--ink);display:flex;align-items:center;gap:8px}
+.c-result::before{content:'';width:16px;height:1px;background:#ccc;flex-shrink:0}
+.c-graphic{margin-top:24px}
+
+.think-wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.think-text{font-size:16px;color:var(--ink);line-height:1.85;font-weight:300}
+.think-text p{margin-bottom:18px}
+.think-text p:last-child{margin-bottom:0}
+.think-text strong{font-weight:600}
+.tstrip-vert{display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.tc{background:var(--w);padding:28px}
+.tc-h{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:8px;line-height:1.3}
+.tc-b{font-size:12px;color:var(--mid);line-height:1.65}
+
+.why-wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.why-text{font-size:15px;font-weight:300;color:var(--mid);line-height:1.85}
+.why-text p{margin-bottom:16px}
+.why-text p:last-child{margin-bottom:0}
+.why-text strong{font-weight:600;color:var(--ink)}
+.why-outcomes{margin-top:24px;display:flex;flex-direction:column;gap:8px}
+.why-outcome{font-size:13px;color:var(--ink);display:flex;align-items:center;gap:10px}
+.why-outcome::before{content:'';width:16px;height:1px;background:#ccc;flex-shrink:0}
+.photo2-wrap{border-radius:8px;overflow:hidden;aspect-ratio:3/4;background:#e0e0e0}
+.photo2-wrap img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+
+.bg-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.bg-cell{background:var(--w);padding:36px 32px}
+.bg-cell-title{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-bottom:20px}
+.bg-item{font-size:13px;color:var(--ink);margin-bottom:10px;line-height:1.5}
+.bg-item span{color:var(--mid);font-size:12px;display:block}
+.tools-wrap{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.tool{font-size:11px;color:var(--mid);background:var(--bg);border:1px solid var(--line);padding:4px 10px;border-radius:3px}
+
+#contact{padding:100px 72px;border-top:1px solid var(--line)}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.contact-left h2{font-size:clamp(32px,3.5vw,52px);font-weight:700;letter-spacing:-.03em;line-height:1.05;margin-bottom:12px}
+.contact-left p{font-size:14px;color:var(--mid);line-height:1.75;margin-bottom:4px}
+.contact-right{display:flex;flex-direction:column;gap:12px;justify-content:center}
+
+footer{padding:28px 72px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.ft{font-size:12px;color:#ccc}
+
+.r{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
+.r.in{opacity:1;transform:none}
+
+@media(max-width:1100px){.nband{grid-template-columns:repeat(3,1fr)}.nb:nth-child(3){border-right:none}.nb:nth-child(n+4){border-top:1px solid var(--line)}.nb:nth-child(6){border-right:none}}
+@media(max-width:900px){
+  nav{padding:0 24px}.nlinks{display:none}
+  #hero{grid-template-columns:1fr}.hr{min-height:70vw}
+  .hl{padding:80px 24px 56px}
+  .sec{padding:64px 24px}
+  .nband{grid-template-columns:1fr 1fr}
+  .fn-row{grid-template-columns:1fr;gap:6px}.fn-i{display:none}
+  .cards{grid-template-columns:1fr}.card-wide{grid-column:span 1}
+  .think-wrap{grid-template-columns:1fr}
+  .why-wrap{grid-template-columns:1fr}
+  .bg-grid{grid-template-columns:1fr}
+  .contact-inner{grid-template-columns:1fr;gap:48px}
+  footer{padding:24px;flex-direction:column;gap:6px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nlogo">AZ</span>
+  <div class="nlinks">
+    <a href="#what" data-k="n1">Work</a>
+    <a href="#proof" data-k="n2">Results</a>
+    <a href="#background" data-k="n3">Background</a>
+    <a href="#contact" data-k="n4">Contact</a>
+  </div>
+  <div class="nlang">
+    <button class="lb on" onclick="L('en')">EN</button>
+    <button class="lb" onclick="L('ru')">RU</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero" style="padding:0;border:none">
+  <div class="hl r">
+    <p class="htag" data-k="htag">Marketing & Growth Manager · B2B SaaS · GTM & Customer Acquisition</p>
+    <h1 class="hname">Aliya<br/><span class="dim">Zholbaryskhan</span></h1>
+    <p class="hdesc" data-k="hdesc">I help B2B SaaS companies enter new markets and grow revenue.</p>
+    <div class="hstats">
+      <div class="hstat" data-k="hs1">105 paying US customers in 60 days, zero presence before</div>
+      <div class="hstat" data-k="hs2">Revenue $15K → $1M+/month</div>
+      <div class="hstat" data-k="hs3">Lead generation 100 → 30,000+/month</div>
+      <div class="hstat" data-k="hs4">User base 200 → 1,000,000+ in 12 months</div>
+    </div>
+    <div class="hbtns">
+      <a href="#proof" class="bd" data-k="cta1">See work</a>
+      <a href="#contact" class="bg-btn" data-k="cta2">Get in touch</a>
+    </div>
+  </div>
+  <div class="hr">
+    <img src="photo1.JPG" alt="Aliya Zholbaryskhan"
+      onerror="this.style.minHeight='60vh';this.style.background='#ddd';this.style.display='block';this.removeAttribute('src')"/>
+    <div class="photo-overlay">
+      <div class="ps"><span class="ps-n">6+</span><span class="ps-l" data-k="s1">years</span></div>
+      <div class="ps"><span class="ps-n">$1M+</span><span class="ps-l" data-k="s2">monthly revenue</span></div>
+      <div class="ps"><span class="ps-n">30K+</span><span class="ps-l" data-k="s3">leads/month</span></div>
+      <div class="ps"><span class="ps-n">76</span><span class="ps-l" data-k="s4">countries</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- METRICS BAND -->
+<section class="sec" style="padding-top:64px;padding-bottom:64px">
+  <div class="nband r">
+    <div class="nb"><span class="nb-n">6+</span><span class="nb-l" data-k="nb1">Years of experience</span></div>
+    <div class="nb"><span class="nb-n">$1M+</span><span class="nb-l" data-k="nb2">Monthly revenue</span></div>
+    <div class="nb"><span class="nb-n">30K+</span><span class="nb-l" data-k="nb3">Leads / Month</span></div>
+    <div class="nb"><span class="nb-n">76</span><span class="nb-l" data-k="nb4">Countries</span></div>
+    <div class="nb"><span class="nb-n">105</span><span class="nb-l" data-k="nb5">US customers in 60 days</span></div>
+    <div class="nb"><span class="nb-n">−81%</span><span class="nb-l">CAC</span></div>
+  </div>
+</section>
+
+<!-- WHAT I DO -->
+<section id="what" class="sec">
+  <p class="slabel r" data-k="sw">What I do</p>
+  <div class="r">
+    <div class="fn-row"><span class="fn-i">01</span><span class="fn-t" data-k="f1t">Growth Strategy</span><span class="fn-r" data-k="f1d">Designing scalable growth systems that increase revenue through customer acquisition, activation, retention, and monetization.</span></div>
+    <div class="fn-row"><span class="fn-i">02</span><span class="fn-t" data-k="f2t">Go-to-Market Strategy</span><span class="fn-r" data-k="f2d">Planning and executing product launches, market expansion, and commercial growth initiatives.</span></div>
+    <div class="fn-row"><span class="fn-i">03</span><span class="fn-t" data-k="f3t">Customer Acquisition</span><span class="fn-r" data-k="f3d">Building acquisition engines across paid, organic, outbound, referral, and partnership channels.</span></div>
+    <div class="fn-row"><span class="fn-i">04</span><span class="fn-t" data-k="f4t">Product Positioning & Messaging</span><span class="fn-r" data-k="f4d">Defining ICP, value propositions, and messaging frameworks that make products easier to sell.</span></div>
+    <div class="fn-row"><span class="fn-i">05</span><span class="fn-t" data-k="f5t">Lifecycle Marketing</span><span class="fn-r" data-k="f5d">Increasing retention and LTV through CRM, customer engagement, lifecycle campaigns, and automation.</span></div>
+    <div class="fn-row"><span class="fn-i">06</span><span class="fn-t" data-k="f6t">AI-powered Marketing</span><span class="fn-r" data-k="f6d">Using AI workflows, n8n automation, and data to scale outbound, experimentation, and marketing execution.</span></div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section id="proof" class="sec">
+  <p class="slabel r" data-k="sp">Selected results</p>
+  <div class="cards r">
+
+    <!-- Dispatch — current -->
+    <div class="card">
+      <div class="c-co">Dispatch · B2B SaaS · Fleet & GPS</div>
+      <div class="c-role" data-k="p0role">Marketing & Growth Manager · Nov 2025 – Present</div>
+      <div class="c-num" data-k="p0num">KZ · UZ · AZ · US</div>
+      <div class="c-sub" data-k="p0s">Fleet management & GPS analytics platform</div>
+      <div class="c-div"></div>
+      <div class="c-fact" data-k="p0">Leading marketing, growth and GTM for a B2B SaaS platform in fleet management and GPS analytics across Kazakhstan, Uzbekistan, Azerbaijan and the US.</div>
+      <div class="c-results">
+        <div class="c-result" data-k="p0r1">Product positioning, messaging, ICP and value propositions</div>
+        <div class="c-result" data-k="p0r2">GTM strategy and market expansion</div>
+        <div class="c-result" data-k="p0r3">Customer acquisition and sales enablement</div>
+        <div class="c-result" data-k="p0r4">AI-powered automation and marketing analytics</div>
+      </div>
+    </div>
+
+    <!-- Flowsell -->
+    <div class="card">
+      <div class="c-co">Flowsell.me · AI & Automation SaaS</div>
+      <div class="c-role">Marketing & Growth Manager · Jan–Oct 2025</div>
+      <div class="c-num">105</div>
+      <div class="c-sub" data-k="p1s">US paying customers in 60 days</div>
+      <div class="c-div"></div>
+      <div class="c-fact" data-k="p1">Led marketing, growth and GTM for an AI-powered B2B SaaS serving 3,000+ customers across 76 countries. Owned US market entry: ICP, positioning, messaging, demand generation, and AI-powered outbound.</div>
+      <div class="c-results">
+        <div class="c-result" data-k="p1r1">105 US paying customers in 60 days · US MRR $23.1K</div>
+        <div class="c-result" data-k="p1r2">ROMI 1,000%+ · MRR +41% · LTV +29%</div>
+        <div class="c-result" data-k="p1r3">Website conversion ×2</div>
+        <div class="c-result" data-k="p1r4">Email open rate ×3 via AI-powered n8n workflows</div>
+      </div>
+      <div class="c-graphic">
+        <svg viewBox="0 0 260 128" style="width:100%;max-width:260px;height:auto;display:block">
+          <rect x="20" y="2" width="220" height="26" rx="3" fill="#f0f0f0"/>
+          <text x="130" y="19" text-anchor="middle" font-size="10" fill="#888" font-family="Inter,sans-serif">Leads 10,000</text>
+          <rect x="50" y="34" width="160" height="26" rx="3" fill="#ddd"/>
+          <text x="130" y="51" text-anchor="middle" font-size="10" fill="#777" font-family="Inter,sans-serif">Qualified 3,200</text>
+          <rect x="80" y="66" width="100" height="26" rx="3" fill="#bbb"/>
+          <text x="130" y="83" text-anchor="middle" font-size="10" fill="#555" font-family="Inter,sans-serif">Trial 960</text>
+          <rect x="100" y="98" width="60" height="26" rx="3" fill="#111"/>
+          <text x="130" y="115" text-anchor="middle" font-size="10" fill="#fff" font-family="Inter,sans-serif">Paid 105</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- MacDent -->
+    <div class="card">
+      <div class="c-co">MacDent · B2B SaaS Dental CRM</div>
+      <div class="c-role">Marketing & GTM Consultant · Oct 2024 – Jan 2026</div>
+      <div class="c-num">+107%</div>
+      <div class="c-sub" data-k="p2s">Revenue · UAE & Central Asia</div>
+      <div class="c-div"></div>
+      <div class="c-fact" data-k="p2">Led marketing and GTM for a B2B SaaS Dental CRM expanding across UAE and Central Asia. Defined positioning, ICP, pricing, packaging, and demand generation from scratch.</div>
+      <div class="c-results">
+        <div class="c-result" data-k="p2r1">Revenue +107%</div>
+        <div class="c-result" data-k="p2r2">Average deal size +39%</div>
+        <div class="c-result" data-k="p2r3">Active client base +84%</div>
+        <div class="c-result" data-k="p2r4">Forum for 400+ clinic owners → direct pipeline</div>
+      </div>
+      <div class="c-graphic" style="display:flex;gap:16px;align-items:center;margin-top:20px">
+        <svg viewBox="0 0 100 100" style="width:84px;height:84px">
+          <circle cx="50" cy="50" r="40" fill="none" stroke="#f0f0f0" stroke-width="9"/>
+          <circle cx="50" cy="50" r="40" fill="none" stroke="#111" stroke-width="9" stroke-dasharray="266 251" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+          <text x="50" y="46" text-anchor="middle" font-size="13" font-weight="700" fill="#111" font-family="Inter">+107%</text>
+          <text x="50" y="60" text-anchor="middle" font-size="8" fill="#aaa" font-family="Inter">revenue</text>
+        </svg>
+        <svg viewBox="0 0 100 100" style="width:84px;height:84px">
+          <circle cx="50" cy="50" r="40" fill="none" stroke="#f0f0f0" stroke-width="9"/>
+          <circle cx="50" cy="50" r="40" fill="none" stroke="#555" stroke-width="9" stroke-dasharray="211 251" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+          <text x="50" y="46" text-anchor="middle" font-size="13" font-weight="700" fill="#111" font-family="Inter">+84%</text>
+          <text x="50" y="60" text-anchor="middle" font-size="8" fill="#aaa" font-family="Inter">clients</text>
+        </svg>
+        <svg viewBox="0 0 100 100" style="width:84px;height:84px">
+          <circle cx="50" cy="50" r="40" fill="none" stroke="#f0f0f0" stroke-width="9"/>
+          <circle cx="50" cy="50" r="40" fill="none" stroke="#999" stroke-width="9" stroke-dasharray="98 251" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+          <text x="50" y="46" text-anchor="middle" font-size="13" font-weight="700" fill="#111" font-family="Inter">+39%</text>
+          <text x="50" y="60" text-anchor="middle" font-size="8" fill="#aaa" font-family="Inter">deal size</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Burkit Finance -->
+    <div class="card">
+      <div class="c-co">Burkit Finance · FinTech</div>
+      <div class="c-role">Growth Marketing Manager · Aug 2023 – Dec 2024</div>
+      <div class="c-num">6,700%</div>
+      <div class="c-sub" data-k="p3s">Monthly revenue: $15K → $1M+</div>
+      <div class="c-div"></div>
+      <div class="c-fact" data-k="p3">Built the marketing and growth function from the ground up for a regulated fintech platform operating across 19 cities. Developed positioning, GTM strategy, acquisition, CRM, lifecycle marketing, and partnerships.</div>
+      <div class="c-results">
+        <div class="c-result" data-k="p3r1">Monthly revenue: $15K → $1M+</div>
+        <div class="c-result" data-k="p3r2">Lead generation: 100 → 30,000+/month</div>
+        <div class="c-result" data-k="p3r3">Users: 200 → 1,000,000+ in 12 months</div>
+        <div class="c-result" data-k="p3r4">CAC −81% · ROI 1,100% · 1 → 20 branches</div>
+      </div>
+      <div class="c-graphic">
+        <svg viewBox="0 0 180 110" style="width:100%;max-width:180px;height:auto;display:block;margin-top:8px">
+          <rect x="18" y="28" width="52" height="76" rx="3" fill="#bbb"/><text x="44" y="108" text-anchor="middle" font-size="9" fill="#888" font-family="Inter">2023</text>
+          <rect x="108" y="2" width="52" height="102" rx="3" fill="#111"/><text x="134" y="108" text-anchor="middle" font-size="9" fill="#888" font-family="Inter">2024</text>
+          <text x="134" y="0" text-anchor="middle" font-size="10" font-weight="700" fill="#111" font-family="Inter">×67</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Asia Park -->
+    <div class="card">
+      <div class="c-co">Asia Park · Arman Cinema</div>
+      <div class="c-role">Marketing Manager · Sep 2021 – Feb 2023</div>
+      <div class="c-num">+56%</div>
+      <div class="c-sub" data-k="p4s">Footfall growth · 2022</div>
+      <div class="c-div"></div>
+      <div class="c-fact" data-k="p4">Led marketing strategy and customer acquisition for one of the largest retail and entertainment complexes. Owned positioning, acquisition, budgeting, and campaign execution across 120+ tenants and 30+ external partners. Led post-COVID recovery initiatives.</div>
+      <div class="c-results">
+        <div class="c-result" data-k="p4r1">Footfall +31% (2021), +56% (2022)</div>
+        <div class="c-result" data-k="p4r2">Social reach +6,000%</div>
+        <div class="c-result" data-k="p4r3">120+ tenants · 30+ external partners</div>
+      </div>
+    </div>
+
+    <!-- PINE -->
+    <div class="card">
+      <div class="c-co">PINE Holding · B2B IT & EdTech</div>
+      <div class="c-role">Digital Marketing Manager · Aug 2020 – Sep 2021</div>
+      <div class="c-num">32%</div>
+      <div class="c-sub" data-k="p5s">Offline event conversion rate</div>
+      <div class="c-div"></div>
+      <div class="c-fact" data-k="p5">Owned demand generation and marketing execution across multiple B2B IT and EdTech products. Supported product launches and GTM initiatives, ran multi-channel B2B acquisition campaigns.</div>
+      <div class="c-results">
+        <div class="c-result" data-k="p5r1">Highest offline conversion rate across product portfolio</div>
+        <div class="c-result" data-k="p5r2">Multi-channel acquisition across B2B and EdTech</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- HOW I THINK -->
+<section class="sec">
+  <p class="slabel r" data-k="sth">How I think about growth</p>
+  <div class="think-wrap r">
+    <div class="think-text">
+      <p data-k="th1"><strong>Growth isn't about launching more campaigns.</strong></p>
+      <p data-k="th2">It's about identifying the biggest commercial constraint preventing a business from scaling.</p>
+      <p data-k="th3">Sometimes the bottleneck is acquisition.<br/>Sometimes it's positioning.<br/>Sometimes it's activation, pricing, retention, or conversion.</p>
+      <p data-k="th4">My role is to identify that constraint, validate it with data, run experiments, and build systems that produce sustainable revenue growth.</p>
+      <p data-k="th5">Marketing activity isn't the goal.<br/>Business growth is.</p>
+    </div>
+    <div class="tstrip-vert">
+      <div class="tc"><div class="tc-h" data-k="t1h">Start with customer insights</div><div class="tc-b" data-k="t1b">Growth starts with understanding customer behavior, motivations, and buying decisions.</div></div>
+      <div class="tc"><div class="tc-h" data-k="t2h">Find the constraint</div><div class="tc-b" data-k="t2b">Every growth system has a limiting factor. Identifying it creates the highest leverage.</div></div>
+      <div class="tc"><div class="tc-h" data-k="t3h">Experiment continuously</div><div class="tc-b" data-k="t3b">Small, measurable experiments reduce uncertainty and compound over time.</div></div>
+      <div class="tc"><div class="tc-h" data-k="t4h">Scale what works</div><div class="tc-b" data-k="t4b">Successful growth comes from building repeatable systems — not one-time campaigns.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY + PHOTO -->
+<section class="sec">
+  <div class="why-wrap">
+    <div>
+      <p class="slabel r" data-k="swy">Why companies work with me</p>
+      <div class="why-text r">
+        <p data-k="wy1"><strong>I work at the intersection of strategy and execution.</strong></p>
+        <p data-k="wy2">Over 6 years I've built marketing from scratch, defined positioning, and launched products across the US, EU and CIS markets.</p>
+        <p data-k="wy3">I build the GTM system, manage execution, and make sure the numbers move.</p>
+        <p data-k="wy4">My work is measured by business outcomes:</p>
+        <div class="why-outcomes">
+          <div class="why-outcome" data-k="wo1">Revenue growth</div>
+          <div class="why-outcome" data-k="wo2">Customer acquisition</div>
+          <div class="why-outcome" data-k="wo3">Market expansion</div>
+          <div class="why-outcome" data-k="wo4">Funnel performance</div>
+          <div class="why-outcome" data-k="wo5">Sustainable growth systems</div>
+        </div>
+      </div>
+    </div>
+    <div class="photo2-wrap r">
+      <img src="photo2.JPG" alt="Aliya Zholbaryskhan"
+        onerror="this.style.minHeight='400px';this.style.background='#ddd';this.removeAttribute('src')"/>
+    </div>
+  </div>
+</section>
+
+<!-- BACKGROUND -->
+<section id="background" class="sec">
+  <p class="slabel r" data-k="sbg">Background</p>
+  <div class="bg-grid r">
+    <div class="bg-cell">
+      <div class="bg-cell-title" data-k="bg1t">Experience</div>
+      <div class="bg-item">Dispatch<span data-k="bg1e0">Marketing & Growth Manager · Nov 2025 – Present</span></div>
+      <div class="bg-item">MacDent<span data-k="bg1e1">Marketing & GTM Consultant · Oct 2024 – Jan 2026</span></div>
+      <div class="bg-item">Flowsell.me<span data-k="bg1e2">Marketing & Growth Manager · Jan–Oct 2025</span></div>
+      <div class="bg-item">Burkit Finance<span data-k="bg1e3">Growth Marketing Manager · Aug 2023 – Dec 2024</span></div>
+      <div class="bg-item">Asia Park<span data-k="bg1e5">Marketing Manager · Sep 2021 – Feb 2023</span></div>
+      <div class="bg-item">PINE Holding<span data-k="bg1e4">Digital Marketing Manager · Aug 2020 – Sep 2021</span></div>
+    </div>
+    <div class="bg-cell">
+      <div class="bg-cell-title" data-k="bg2t">Education</div>
+      <div class="bg-item">L.N. Gumilyov Eurasian National University<span data-k="bg2e2">Master's, Engineering Science · 2019 – 2021</span></div>
+      <div style="margin-top:24px">
+        <div class="bg-cell-title" data-k="bg3t">Certifications</div>
+        <div class="bg-item">Integrated Marketing Communications<span>IE Business School · 2021</span></div>
+        <div class="bg-item">Communication Technologies, Storytelling & Influence<span>Macquarie University · 2025</span></div>
+        <div class="bg-item">Brand Management: Strategies for a Strong Brand<span>Coursera · 2024</span></div>
+        <div class="bg-item">Viral Marketing and Contagious Content<span>University of Pennsylvania · 2024</span></div>
+        <div class="bg-item">Generative AI for Growth Marketing<span>IBM · 2026</span></div>
+        <div class="bg-item">Consumer Neuroscience & Neuromarketing<span>Copenhagen Business School · 2026</span></div>
+        <div class="bg-item">Developing a Winning Marketing Strategy<span>University of Illinois · 2026</span></div>
+      </div>
+    </div>
+    <div class="bg-cell">
+      <div class="bg-cell-title" data-k="bg4t">Tools</div>
+      <div class="tools-wrap">
+        <span class="tool">SQL</span><span class="tool">Python</span><span class="tool">n8n</span>
+        <span class="tool">AI workflows</span><span class="tool">Google Analytics</span><span class="tool">Metabase</span>
+        <span class="tool">HubSpot</span><span class="tool">Meta Ads</span><span class="tool">Google Ads</span>
+        <span class="tool">Miro</span><span class="tool">Lovable</span><span class="tool">Craftum</span>
+      </div>
+      <div style="margin-top:24px">
+        <div class="bg-cell-title" data-k="bg5t">Languages</div>
+        <div class="bg-item">English <span>C1 (IELTS 7.0)</span></div>
+        <div class="bg-item" data-k="bg5l1">Russian <span>Native</span></div>
+        <div class="bg-item" data-k="bg5l2">Kazakh <span>Native</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="sec">
+  <div class="contact-inner r">
+    <div class="contact-left">
+      <h2>Aliya Zholbaryskhan</h2>
+      <p>Marketing & Growth Manager · B2B SaaS</p>
+      <p>GTM & Customer Acquisition · $15K → $1M+ MRR</p>
+      <p style="margin-top:8px;color:#aaa;font-size:13px" data-k="cloc">Based in Kazakhstan · Open to remote opportunities across Europe and the US</p>
+      <p style="color:#aaa;font-size:13px;margin-top:4px" data-k="clang">English C1 · Russian Native · Kazakh Native</p>
+    </div>
+    <div class="contact-right">
+      <a href="mailto:aliyasha7@gmail.com" class="bd">aliyasha7@gmail.com</a>
+      <a href="https://linkedin.com/in/aliya-zholbaryskhan" target="_blank" class="bg-btn">LinkedIn →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="ft">Aliya Zholbaryskhan — Marketing & Growth Manager</span>
+  <span class="ft">© 2026</span>
+</footer>
+
+<script>
+const T={
+  en:{
+    n1:'Work',n2:'Results',n3:'Background',n4:'Contact',
+    htag:'Marketing & Growth Manager · B2B SaaS · GTM & Customer Acquisition',
+    hdesc:'I help B2B SaaS companies enter new markets and grow revenue.',
+    hs1:'105 paying US customers in 60 days, zero presence before',
+    hs2:'Revenue $15K → $1M+/month',
+    hs3:'Lead generation 100 → 30,000+/month',
+    hs4:'User base 200 → 1,000,000+ in 12 months',
+    cta1:'See work',cta2:'Get in touch',
+    s1:'years',s2:'monthly revenue',s3:'leads/month',s4:'countries',
+    nb1:'Years of experience',nb2:'Monthly revenue',nb3:'Leads / Month',nb4:'Countries',nb5:'US customers in 60 days',
+    sw:'What I do',
+    f1t:'Growth Strategy',f1d:'Designing scalable growth systems that increase revenue through customer acquisition, activation, retention, and monetization.',
+    f2t:'Go-to-Market Strategy',f2d:'Planning and executing product launches, market expansion, and commercial growth initiatives.',
+    f3t:'Customer Acquisition',f3d:'Building acquisition engines across paid, organic, outbound, referral, and partnership channels.',
+    f4t:'Product Positioning & Messaging',f4d:'Defining ICP, value propositions, and messaging frameworks that make products easier to sell.',
+    f5t:'Lifecycle Marketing',f5d:'Increasing retention and LTV through CRM, customer engagement, lifecycle campaigns, and automation.',
+    f6t:'AI-powered Marketing',f6d:'Using AI workflows, n8n automation, and data to scale outbound, experimentation, and marketing execution.',
+    sp:'Selected results',
+    p0role:'Marketing & Growth Manager · Nov 2025 – Present',
+    p0num:'KZ · UZ · AZ · US',
+    p0s:'Fleet management & GPS analytics platform',
+    p0:'Leading marketing, growth and GTM for a B2B SaaS platform in fleet management and GPS analytics across Kazakhstan, Uzbekistan, Azerbaijan and the US.',
+    p0r1:'Product positioning, messaging, ICP and value propositions',
+    p0r2:'GTM strategy and market expansion',
+    p0r3:'Customer acquisition and sales enablement',
+    p0r4:'AI-powered automation and marketing analytics',
+    p1s:'US paying customers in 60 days',
+    p1:'Led marketing, growth and GTM for an AI-powered B2B SaaS serving 3,000+ customers across 76 countries. Owned US market entry: ICP, positioning, messaging, demand generation, and AI-powered outbound.',
+    p1r1:'105 US paying customers in 60 days · US MRR $23.1K',p1r2:'ROMI 1,000%+ · MRR +41% · LTV +29%',p1r3:'Website conversion ×2',p1r4:'Email open rate ×3 via AI-powered n8n workflows',
+    p2:'Led marketing and GTM for a B2B SaaS Dental CRM expanding across UAE and Central Asia. Defined positioning, ICP, pricing, packaging, and demand generation from scratch.',
+    p2s:'Revenue · UAE & Central Asia',
+    p2r1:'Revenue +107%',p2r2:'Average deal size +39%',p2r3:'Active client base +84%',p2r4:'Forum for 400+ clinic owners → direct pipeline',
+    p3:'Built the marketing and growth function from the ground up for a regulated fintech platform operating across 19 cities. Developed positioning, GTM strategy, acquisition, CRM, lifecycle marketing, and partnerships.',
+    p3s:'Monthly revenue: $15K → $1M+',
+    p3r1:'Monthly revenue: $15K → $1M+',p3r2:'Lead generation: 100 → 30,000+/month',p3r3:'Users: 200 → 1,000,000+ in 12 months',p3r4:'CAC −81% · ROI 1,100% · 1 → 20 branches',
+    p4:'Led marketing strategy and customer acquisition for one of the largest retail and entertainment complexes. Owned positioning, acquisition, budgeting, and campaign execution across 120+ tenants and 30+ external partners.',
+    p4s:'Footfall growth · 2022',
+    p4r1:'Footfall +31% (2021), +56% (2022)',p4r2:'Social reach +6,000%',p4r3:'120+ tenants · 30+ external partners',
+    p5:'Owned demand generation and marketing execution across multiple B2B IT and EdTech products. Supported product launches and GTM initiatives, ran multi-channel B2B acquisition campaigns.',
+    p5s:'Offline event conversion rate',
+    p5r1:'Highest offline conversion rate across product portfolio',p5r2:'Multi-channel acquisition across B2B and EdTech',
+    sth:'How I think about growth',
+    th1:'<strong>Growth isn\'t about launching more campaigns.</strong>',
+    th2:"It's about identifying the biggest commercial constraint preventing a business from scaling.",
+    th3:"Sometimes the bottleneck is acquisition.<br/>Sometimes it's positioning.<br/>Sometimes it's activation, pricing, retention, or conversion.",
+    th4:'My role is to identify that constraint, validate it with data, run experiments, and build systems that produce sustainable revenue growth.',
+    th5:"Marketing activity isn't the goal.<br/>Business growth is.",
+    t1h:'Start with customer insights',t1b:'Growth starts with understanding customer behavior, motivations, and buying decisions.',
+    t2h:'Find the constraint',t2b:'Every growth system has a limiting factor. Identifying it creates the highest leverage.',
+    t3h:'Experiment continuously',t3b:'Small, measurable experiments reduce uncertainty and compound over time.',
+    t4h:'Scale what works',t4b:'Successful growth comes from building repeatable systems — not one-time campaigns.',
+    swy:'Why companies work with me',
+    wy1:'<strong>I work at the intersection of strategy and execution.</strong>',
+    wy2:"Over 6 years I've built marketing from scratch, defined positioning, and launched products across the US, EU and CIS markets.",
+    wy3:'I build the GTM system, manage execution, and make sure the numbers move.',
+    wy4:'My work is measured by business outcomes:',
+    wo1:'Revenue growth',wo2:'Customer acquisition',wo3:'Market expansion',wo4:'Funnel performance',wo5:'Sustainable growth systems',
+    sbg:'Background',
+    bg1t:'Experience',
+    bg1e0:'Marketing & Growth Manager · Nov 2025 – Present',
+    bg1e1:'Marketing & GTM Consultant · Oct 2024 – Jan 2026',
+    bg1e2:'Marketing & Growth Manager · Jan–Oct 2025',
+    bg1e3:'Growth Marketing Manager · Aug 2023 – Dec 2024',
+    bg1e4:'Digital Marketing Manager · Aug 2020 – Sep 2021',
+    bg1e5:'Marketing Manager · Sep 2021 – Feb 2023',
+    bg2t:'Education',bg2e2:"Master's, Engineering Science · 2019 – 2021",
+    bg3t:'Certifications',bg4t:'Tools',bg5t:'Languages',
+    bg5l1:'Russian · Native',bg5l2:'Kazakh · Native',
+    cloc:'Based in Kazakhstan · Open to remote opportunities across Europe and the US',
+    clang:'English C1 (IELTS 7.0) · Russian Native · Kazakh Native'
+  },
+  ru:{
+    n1:'Работа',n2:'Результаты',n3:'Бэкграунд',n4:'Контакт',
+    htag:'Marketing & Growth Manager · B2B SaaS · GTM & Customer Acquisition',
+    hdesc:'Помогаю B2B SaaS-компаниям выходить на новые рынки и увеличивать выручку.',
+    hs1:'105 платящих клиентов в США за 60 дней, с нуля',
+    hs2:'Выручка $15K → $1M+/месяц',
+    hs3:'Лидогенерация 100 → 30,000+/месяц',
+    hs4:'База пользователей 200 → 1,000,000+ за 12 месяцев',
+    cta1:'Смотреть кейсы',cta2:'Написать',
+    s1:'лет',s2:'выручка в месяц',s3:'лидов/месяц',s4:'стран',
+    nb1:'Лет опыта',nb2:'Выручка в месяц',nb3:'Лидов / месяц',nb4:'Стран',nb5:'US клиентов за 60 дней',
+    sw:'Чем занимаюсь',
+    f1t:'Growth-стратегия',f1d:'Проектирование масштабируемых систем роста через привлечение, активацию, удержание и монетизацию.',
+    f2t:'Go-to-Market стратегия',f2d:'Планирование и исполнение запусков продуктов, расширения рынков и коммерческих инициатив.',
+    f3t:'Привлечение клиентов',f3d:'Построение систем привлечения через платные, органические, outbound, реферальные и партнёрские каналы.',
+    f4t:'Позиционирование и мессаджинг',f4d:'Определение ICP, ценностных предложений и фреймворков мессаджинга, которые упрощают продажи.',
+    f5t:'Lifecycle Marketing',f5d:'Увеличение удержания и LTV через CRM, вовлечение клиентов, lifecycle-кампании и автоматизацию.',
+    f6t:'AI-автоматизация',f6d:'Использование AI-воркфлоу, n8n и данных для масштабирования outbound, экспериментов и маркетинга.',
+    sp:'Избранные результаты',
+    p0role:'Marketing & Growth Manager · нояб 2025 – н.в.',
+    p0num:'KZ · UZ · AZ · US',
+    p0s:'Платформа fleet management и GPS-аналитики',
+    p0:'Руковожу маркетингом, ростом и GTM для B2B SaaS-платформы в fleet management и GPS-аналитике для Казахстана, Узбекистана, Азербайджана и США.',
+    p0r1:'Позиционирование, мессаджинг, ICP и ценностные предложения',
+    p0r2:'GTM-стратегия и расширение рынков',
+    p0r3:'Привлечение клиентов и sales enablement',
+    p0r4:'AI-автоматизация и маркетинговая аналитика',
+    p1s:'платящих клиентов в США за 60 дней',
+    p1:'Руководила маркетингом, ростом и GTM для AI-powered B2B SaaS с 3,000+ клиентами в 76 странах. Отвечала за выход на рынок США: ICP, позиционирование, мессаджинг, demand gen и AI-outbound.',
+    p1r1:'105 клиентов в США за 60 дней · MRR $23.1K',p1r2:'ROMI 1,000%+ · MRR +41% · LTV +29%',p1r3:'Конверсия сайта ×2',p1r4:'Open rate email ×3 через AI-воркфлоу n8n',
+    p2:'Руководила маркетингом и GTM для B2B SaaS Dental CRM, выходящего на рынки ОАЭ и Центральной Азии. Построила позиционирование, ICP, ценообразование, упаковку и demand gen с нуля.',
+    p2s:'выручка · ОАЭ и Центральная Азия',
+    p2r1:'Выручка +107%',p2r2:'Средний чек +39%',p2r3:'База клиентов +84%',p2r4:'Форум 400+ владельцев клиник → прямой pipeline',
+    p3:'Построила функцию маркетинга и роста с нуля для регулируемого финтеха в 19 городах. Разработала позиционирование, GTM, привлечение, CRM, lifecycle-маркетинг и партнёрства.',
+    p3s:'Месячная выручка: $15K → $1M+',
+    p3r1:'Месячная выручка: $15K → $1M+',p3r2:'Лидогенерация: 100 → 30,000+/месяц',p3r3:'Пользователи: 200 → 1,000,000+ за 12 месяцев',p3r4:'CAC −81% · ROI 1,100% · 1 → 20 филиалов',
+    p4:'Руководила маркетинговой стратегией и привлечением клиентов для одного из крупнейших торгово-развлекательных комплексов. Позиционирование, привлечение, бюджетирование и исполнение.',
+    p4s:'Рост посещаемости · 2022',
+    p4r1:'Посещаемость +31% (2021), +56% (2022)',p4r2:'Охват в соцсетях +6,000%',p4r3:'120+ арендаторов · 30+ внешних партнёров',
+    p5:'Отвечала за demand gen и маркетинг по нескольким B2B IT и EdTech-продуктам. Поддержка запусков, GTM-инициативы, мультиканальные кампании.',
+    p5s:'Конверсия офлайн-мероприятий',
+    p5r1:'Наивысшая конверсия среди всех продуктовых линеек',p5r2:'Мультиканальное привлечение по B2B и EdTech',
+    sth:'Как думаю о росте',
+    th1:'<strong>Рост — это не про запуск новых кампаний.</strong>',
+    th2:'Это про определение главного коммерческого ограничения, которое мешает бизнесу масштабироваться.',
+    th3:'Иногда узкое место — привлечение.<br/>Иногда — позиционирование.<br/>Иногда — активация, ценообразование или конверсия.',
+    th4:'Моя роль — определить это ограничение, подтвердить данными, запустить эксперименты и построить системы устойчивого роста.',
+    th5:'Маркетинговая активность — не цель.<br/>Цель — рост бизнеса.',
+    t1h:'Начинать с клиентских инсайтов',t1b:'Рост начинается с понимания поведения клиентов, их мотивов и решений о покупке.',
+    t2h:'Найти ограничение',t2b:'В каждой growth-системе есть лимитирующий фактор. Его определение даёт наибольший рычаг.',
+    t3h:'Экспериментировать непрерывно',t3b:'Маленькие, измеримые эксперименты снижают неопределённость и накапливаются со временем.',
+    t4h:'Масштабировать то, что работает',t4b:'Успешный рост строится на повторяемых системах — не разовых кампаниях.',
+    swy:'Почему компании работают со мной',
+    wy1:'<strong>Работаю на пересечении стратегии и исполнения.</strong>',
+    wy2:'За 6 лет строила маркетинг с нуля, определяла позиционирование и запускала продукты на рынках США, ЕС и СНГ.',
+    wy3:'Строю GTM-систему, управляю исполнением и слежу за тем, чтобы цифры двигались.',
+    wy4:'Моя работа измеряется бизнес-результатами:',
+    wo1:'Рост выручки',wo2:'Привлечение клиентов',wo3:'Расширение рынков',wo4:'Эффективность воронки',wo5:'Устойчивые growth-системы',
+    sbg:'Бэкграунд',
+    bg1t:'Опыт работы',
+    bg1e0:'Marketing & Growth Manager · нояб 2025 – н.в.',
+    bg1e1:'Marketing & GTM Consultant · окт 2024 – янв 2026',
+    bg1e2:'Marketing & Growth Manager · янв–окт 2025',
+    bg1e3:'Growth Marketing Manager · авг 2023 – дек 2024',
+    bg1e4:'Digital Marketing Manager · авг 2020 – сен 2021',
+    bg1e5:'Marketing Manager · сен 2021 – фев 2023',
+    bg2t:'Образование',bg2e2:"Магистр технических наук · 2019 – 2021",
+    bg3t:'Сертификаты',bg4t:'Инструменты',bg5t:'Языки',
+    bg5l1:'Русский · Родной',bg5l2:'Казахский · Родной',
+    cloc:'Казахстан · Открыта для удалённых возможностей в Европе и США',
+    clang:'English C1 (IELTS 7.0) · Русский (родной) · Казахский (родной)'
+  }
+};
+
+function L(l){
+  document.querySelectorAll('.lb').forEach(b=>b.classList.toggle('on',b.textContent===l.toUpperCase()));
+  const d=T[l];
+  document.querySelectorAll('[data-k]').forEach(el=>{const k=el.dataset.k;if(d[k]!==undefined)el.innerHTML=d[k];});
+  document.documentElement.lang=l;
+}
+L('en');
+
+const ro=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');ro.unobserve(x.target);}});},{threshold:.05});
+document.querySelectorAll('.r').forEach(el=>ro.observe(el));
+</script>
+</body>
+</html>
